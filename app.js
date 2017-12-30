@@ -53,9 +53,9 @@ function reversingCards(card,value){
   				function reverseBackCard(){
   				    var card_1 = document.getElementById(cardIDs[0]);
   				    var card_2 = document.getElementById(cardIDs[1]);
-  				    card_1.style.background = 'url(img/chinese.png) no-repeat';
+  				    card_1.style.background = 'url(chinese.png) no-repeat';
               	    card_1.innerHTML = "";
-  				    card_2.style.background = 'url(img/chinese.png) no-repeat';
+  				    card_2.style.background = 'url(chinese.png) no-repeat';
               	    card_2.innerHTML = "";
   				    // Clear both arrays
   				    cardValues = [];
