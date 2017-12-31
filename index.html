@@ -7,7 +7,16 @@
     </head>
     <body>
         <h1>Memory Game</h1>
-        <h2><span id="count" >0</span> Moves</h2>
+
+          <div id="score-panel">
+            <h2><span id="count" >0</span> Moves</h2>
+            <ul class="stars">
+                <li><h2><i class="star1"></i></h2></li>
+                <li><h2><i class="star2"></i></h2></li>
+                <li><h2><i class="star3"></i></h2></li>
+            </ul>
+          </div>
+
         <p id="moveTextDisplay"></p>
         <div id="gameBoard"></div>
         <script>creatNewBoard();</script>
