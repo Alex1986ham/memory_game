@@ -6,6 +6,13 @@ var cardValues = [];
 var cardIDs = [];
 var cardReversed = 0;
 var countingMoves = 0;
+//var $scorePanel = $('#score-panel');
+var rank3stars = 4;
+var rank2stars = 8;
+var rank1stars = 10;
+//var $ratingStars = $('i');
+
+
 Array.prototype.cardShuffle = function(){
     var i = this.length, j, temp;
     while(--i > 0){
@@ -53,9 +60,9 @@ function reversingCards(card,value){
   				function reverseBackCard(){
   				    var card_1 = document.getElementById(cardIDs[0]);
   				    var card_2 = document.getElementById(cardIDs[1]);
-  				    card_1.style.background = 'url(chinese.png) no-repeat';
+  				    card_1.style.background = 'url(img/chinese.png) no-repeat';
               	    card_1.innerHTML = "";
-  				    card_2.style.background = 'url(chinese.png) no-repeat';
+  				    card_2.style.background = 'url(img/chinese.png) no-repeat';
               	    card_2.innerHTML = "";
   				    // Clear both arrays
   				    cardValues = [];
@@ -66,14 +73,17 @@ function reversingCards(card,value){
           countingMoves += 1;
           //this part is for counting the wrong moves and giving some statements in case of to much wrong moves
           document.getElementById('count').innerHTML = countingMoves;
-          if (countingMoves == 4) {
+          if (countingMoves > 3 && countingMoves < 8) {
             document.getElementById('moveTextDisplay').innerHTML = ("... the time has come to focus on the game.... get better!")
-          } else if (countingMoves == 8) {
+            $( "i").removeClass("star3");
+          } else if (countingMoves > 7 && countingMoves < 12) {
               document.getElementById('moveTextDisplay').innerHTML = ("... even my grandmother can do better than you....")
-          } else if (countingMoves == 12) {
+              $( "i").removeClass("star2");
+          } else if (countingMoves > 11 && countingMoves < 16) {
               document.getElementById('moveTextDisplay').innerHTML = ("... what's wrong with your memory? It's so simple.....")
           } else if (countingMoves == 16) {
               document.getElementById('moveTextDisplay').innerHTML = ("... still so bad... I'm so disappointed in you.....")
+              $( "i").removeClass("star1");
           }
         }
 }
