@@ -76,7 +76,7 @@ div#gameBoard > div {
   text-align: center;
   list-style: none;
   display: inline-block;
-  background: url(img/star.png)  no-repeat;
+  
   background-size: 30px;
   width: 30px;
   height: 30px;
