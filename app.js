@@ -50,14 +50,15 @@ function createNewBoard(){
   				// Clear both arrays
   				cardValues = [];
           cardIDs = [];
-          if(cardReversed == cardArray.length) { //checking if all cards where reversed and matched to each other
+          //cardReversed == cardArray.length
+          if(cardReversed > 1) { //checking if all cards where reversed and matched to each other
             clearInterval(timer);
             timmer = null;
             swal({ //Alert after finishing the game
             		allowEscapeKey: false,
             		allowOutsideClick: false,
             		title: 'Congratulations! \n You finally did it!',
-            		text: 'You finished the game in ' + countingMoves + ' moves and after ' + timer + '  seconds!',
+            		text: 'You finished the game in ' + countingMoves + ' moves and reached ' + stars + '  stars!',
             		type: 'success',
                 showCancelButton: true,
                 cancelButtonColor: '#d33',
@@ -97,10 +98,6 @@ function createNewBoard(){
               $( "i").removeClass("star2");
           } else if (countingMoves > 11 && countingMoves < 16) {
               document.getElementById('moveTextDisplay').innerHTML = ("... what's wrong with your memory? It's so simple.....")
-          } else if (countingMoves == 16) {
-              document.getElementById('moveTextDisplay').innerHTML = ("... still so bad... I'm so disappointed in you.....")
-              $( "i").removeClass("star1");
-
           }
         }
 }
